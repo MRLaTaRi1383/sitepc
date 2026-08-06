@@ -2565,3 +2565,577 @@ padding:18px;
 }
 
 }
+
+
+
+/* =========================
+   HEADER GLASS STYLE
+========================= */
+
+
+.main-header {
+
+    position: sticky;
+    top: 18px;
+    z-index: 999;
+
+    width: min(1200px , calc(100% - 40px));
+
+    margin: 18px auto 0;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.72),
+        rgba(255,255,255,.35)
+    );
+
+
+    border:1px solid rgba(255,255,255,.8);
+
+
+    backdrop-filter: blur(30px) saturate(160%);
+    -webkit-backdrop-filter: blur(30px) saturate(160%);
+
+
+    box-shadow:
+    0 20px 60px rgba(30,70,130,.15);
+
+
+    border-radius:30px;
+
+}
+
+
+
+.header-container {
+
+
+    height:82px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 22px;
+
+    gap:25px;
+
+}
+
+
+
+
+
+/* لوگو */
+
+
+.logo {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+
+    color:#111827;
+
+
+}
+
+
+
+.logo-icon {
+
+
+    width:48px;
+
+    height:48px;
+
+
+    border-radius:18px;
+
+
+    display:grid;
+
+    place-items:center;
+
+
+    color:white;
+
+    font-size:25px;
+
+    font-weight:900;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #007aff,
+        #7c4dff
+    );
+
+
+    box-shadow:
+
+    0 15px 30px rgba(0,122,255,.35);
+
+
+}
+
+
+
+
+
+.logo-text strong {
+
+
+    display:block;
+
+    font-size:16px;
+
+
+}
+
+
+.logo-text span {
+
+
+    font-size:12px;
+
+    color:#64748b;
+
+
+}
+
+
+
+
+
+/* منوی اصلی */
+
+
+.main-nav {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+
+}
+
+
+
+.main-nav>a,
+.mega-trigger {
+
+
+    padding:12px 18px;
+
+
+    border-radius:16px;
+
+
+    color:#334155;
+
+
+    transition:.25s;
+
+
+    white-space:nowrap;
+
+
+}
+
+
+
+.main-nav>a:hover,
+.mega-trigger:hover {
+
+
+    background:
+    rgba(255,255,255,.75);
+
+
+    color:#007aff;
+
+
+}
+
+
+
+
+
+/* =========================
+   MEGA MENU
+========================= */
+
+
+.mega-wrapper {
+
+
+    position:relative;
+
+
+}
+
+
+
+
+.mega-trigger {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+
+}
+
+
+
+
+
+.mega-menu {
+
+
+    position:absolute;
+
+
+    top:55px;
+
+
+    right:0;
+
+
+    width:850px;
+
+
+    padding:25px;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(4,1fr)
+    1.3fr;
+
+
+    gap:20px;
+
+
+
+    background:
+
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.85),
+        rgba(245,248,255,.65)
+    );
+
+
+    border:
+
+    1px solid rgba(255,255,255,.9);
+
+
+
+    border-radius:32px;
+
+
+
+    box-shadow:
+
+
+    0 35px 80px rgba(20,40,90,.18);
+
+
+
+    backdrop-filter:
+
+    blur(35px);
+
+
+
+    opacity:0;
+
+    visibility:hidden;
+
+
+    transform:
+
+    translateY(15px);
+
+
+
+    transition:.35s ease;
+
+
+}
+
+
+
+
+
+.mega-wrapper:hover .mega-menu {
+
+
+    opacity:1;
+
+    visibility:visible;
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+
+
+
+.mega-column {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+
+}
+
+
+
+.mega-column h3 {
+
+
+    margin:0 0 12px;
+
+
+    font-size:15px;
+
+
+    color:#0f172a;
+
+
+}
+
+
+
+
+
+.mega-column a {
+
+
+    padding:8px 10px;
+
+
+    border-radius:12px;
+
+
+    color:#64748b;
+
+
+    font-size:14px;
+
+
+    transition:.2s;
+
+
+}
+
+
+
+.mega-column a:hover {
+
+
+    background:
+
+    rgba(0,122,255,.08);
+
+
+    color:#007aff;
+
+
+    transform:translateX(-4px);
+
+
+}
+
+
+
+
+
+/* بنر داخل مگامنو */
+
+
+.mega-banner {
+
+
+    border-radius:25px;
+
+
+    padding:20px;
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+
+    background:
+
+
+    linear-gradient(
+        145deg,
+        #007aff,
+        #8b5cf6
+    );
+
+
+    box-shadow:
+
+
+    0 20px 40px rgba(0,122,255,.25);
+
+
+}
+
+
+
+
+
+.mega-banner span {
+
+
+    font-size:13px;
+
+    opacity:.8;
+
+
+}
+
+
+.mega-banner strong {
+
+
+    font-size:22px;
+
+
+    margin:10px 0;
+
+
+}
+
+
+.mega-banner p {
+
+
+    margin:0;
+
+    opacity:.9;
+
+
+}
+
+
+
+
+
+/* دکمه های سمت راست */
+
+
+.header-actions {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+
+}
+
+
+
+.search-btn {
+
+
+    width:45px;
+
+    height:45px;
+
+
+    border-radius:15px;
+
+
+    border:0;
+
+
+    background:
+
+    rgba(255,255,255,.7);
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+.call-btn {
+
+
+    padding:12px 20px;
+
+
+    border-radius:16px;
+
+
+    color:white;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #007aff,
+        #00c6ff
+    );
+
+
+    box-shadow:
+
+    0 10px 25px rgba(0,122,255,.25);
+
+
+}
