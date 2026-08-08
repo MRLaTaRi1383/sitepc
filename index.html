@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a1628" />
+    <title>NoCenter | فروشگاه دیجیتال</title>
+    <link rel="stylesheet" href="https://cdn.font-store.ir/behdad.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dark.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="index.html" class="brand-link">
+                        <div class="brand-mark"><i class="fas fa-cube"></i></div>
+                        <div><strong>NoCenter</strong><small>فروشگاه دیجیتال</small></div>
+                    </a>
+                </div>
+
+                <nav class="mega-nav">
+                    <ul class="mega-menu">
+                        <li class="mega-item">
+                            <a href="products.html?category=mobile"><i class="fas fa-mobile-alt"></i> موبایل</a>
+                            <div class="mega-dropdown">
+                                <div class="mega-col">
+                                    <h4>وضعیت</h4>
+                                    <a href="products.html?category=mobile&condition=new"><i class="fas fa-check-circle"></i> نو</a>
+                                    <a href="products.html?category=mobile&condition=used"><i class="fas fa-sync-alt"></i> کارکرده</a>
+                                </div>
+                                <div class="mega-col">
+                                    <h4>برندها</h4>
+                                    <a href="products.html?category=mobile&brand=xiaomi"><i class="fab fa-xiaomi"></i> شیائومی | Xiaomi</a>
+                                    <a href="products.html?category=mobile&brand=samsung"><i class="fab fa-samsung"></i> سامسونگ | Samsung</a>
+                                    <a href="products.html?category=mobile&brand=apple"><i class="fab fa-apple"></i> اپل | Apple</a>
+                                    <a href="products.html?category=mobile&brand=nothing"><i class="fas fa-circle"></i> ناتینگ | Nothing</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mega-item">
+                            <a href="products.html?category=laptop"><i class="fas fa-laptop"></i> لپ‌تاپ</a>
+                            <div class="mega-dropdown">
+                                <div class="mega-col">
+                                    <h4>وضعیت</h4>
+                                    <a href="products.html?category=laptop&condition=new"><i class="fas fa-check-circle"></i> نو</a>
+                                    <a href="products.html?category=laptop&condition=used"><i class="fas fa-sync-alt"></i> کارکرده</a>
+                                </div>
+                                <div class="mega-col">
+                                    <h4>برندها</h4>
+                                    <a href="products.html?category=laptop&brand=dell"><i class="fas fa-laptop"></i> دل | Dell</a>
+                                    <a href="products.html?category=laptop&brand=asus"><i class="fas fa-laptop"></i> ایسوس | Asus</a>
+                                    <a href="products.html?category=laptop&brand=hp"><i class="fas fa-laptop"></i> اچ‌پی | HP</a>
+                                    <a href="products.html?category=laptop&brand=lenovo"><i class="fas fa-laptop"></i> لنوو | Lenovo</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mega-item">
+                            <a href="products.html?category=computer"><i class="fas fa-desktop"></i> کامپیوتر</a>
+                            <div class="mega-dropdown">
+                                <div class="mega-col">
+                                    <h4>وضعیت</h4>
+                                    <a href="products.html?category=computer&condition=used"><i class="fas fa-sync-alt"></i> کارکرده</a>
+                                </div>
+                                <div class="mega-col">
+                                    <h4>قطعات</h4>
+                                    <a href="products.html?category=computer&part=cpu"><i class="fas fa-microchip"></i> CPU</a>
+                                    <a href="products.html?category=computer&part=ram"><i class="fas fa-memory"></i> RAM</a>
+                                    <a href="products.html?category=computer&part=hdd"><i class="fas fa-hdd"></i> HDD</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mega-item">
+                            <a href="products.html?category=accessory"><i class="fas fa-headphones"></i> لوازم جانبی</a>
+                            <div class="mega-dropdown">
+                                <div class="mega-col">
+                                    <h4>کامپیوتر</h4>
+                                    <a href="products.html?category=accessory&sub=mouse"><i class="fas fa-mouse"></i> موس | Mouse</a>
+                                    <a href="products.html?category=accessory&sub=keyboard"><i class="fas fa-keyboard"></i> کیبورد | Keyboard</a>
+                                </div>
+                                <div class="mega-col">
+                                    <h4>موبایل</h4>
+                                    <a href="products.html?category=accessory&sub=charger"><i class="fas fa-bolt"></i> شارژر | Charger</a>
+                                    <a href="products.html?category=accessory&sub=case"><i class="fas fa-mobile-alt"></i> قاب | Case</a>
+                                    <a href="products.html?category=accessory&sub=glass"><i class="fas fa-shield-alt"></i> گلس | Glass</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mega-item">
+                            <a href="products.html?category=sim"><i class="fas fa-sim-card"></i> سیم‌کارت</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="search-toggle-mobile" id="searchToggleMobile"><i class="fas fa-search"></i></button>
+                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <button class="auth-toggle" id="authToggle"><i class="fas fa-user"></i> <span>ورود</span></button>
+                    <button class="cart-toggle" id="cartToggle"><i class="fas fa-shopping-cart"></i><span id="cartCount">0</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE SEARCH ===== -->
+    <div class="mobile-search-card hidden" id="mobileSearchCard">
+        <div class="mobile-search-inner">
+            <input type="text" id="mobileSearchInput" placeholder="جستجو در تمام کالاها..." />
+            <button id="mobileSearchBtn"><i class="fas fa-search"></i></button>
+            <button id="mobileSearchClose"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- ===== MOBILE BOTTOM NAV ===== -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="active"><span><i class="fas fa-home"></i></span><small>خانه</small></a>
+        <a href="#" id="mobileCategoryToggle"><span><i class="fas fa-th-large"></i></span><small>دسته‌ها</small></a>
+        <a href="#" id="mobileSearchToggle"><span><i class="fas fa-search"></i></span><small>جستجو</small></a>
+        <a href="products.html"><span><i class="fas fa-tags"></i></span><small>کالاها</small></a>
+        <a href="#" id="mobileCart"><span><i class="fas fa-shopping-cart"></i></span><small>سبد</small></a>
+    </nav>
+
+    <!-- ===== MOBILE CATEGORY SIDEBAR ===== -->
+    <div class="mobile-category-sidebar" id="mobileCategorySidebar">
+        <div class="mobile-category-header">
+            <h3>📂 دسته‌بندی</h3>
+            <button id="mobileCategoryClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-category-list">
+            <a href="products.html?category=mobile"><i class="fas fa-mobile-alt"></i> موبایل</a>
+            <a href="products.html?category=laptop"><i class="fas fa-laptop"></i> لپ‌تاپ</a>
+            <a href="products.html?category=computer"><i class="fas fa-desktop"></i> کامپیوتر</a>
+            <a href="products.html?category=accessory"><i class="fas fa-headphones"></i> لوازم جانبی</a>
+            <a href="products.html?category=sim"><i class="fas fa-sim-card"></i> سیم‌کارت</a>
+        </div>
+    </div>
+    <div class="mobile-category-overlay" id="mobileCategoryOverlay"></div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-card">
+                <div class="hero-copy">
+                    <span class="hero-badge">🔥 پیشنهاد ویژه</span>
+                    <h1>به <span class="gradient-text">NoCenter</span> خوش آمدید</h1>
+                    <p>بهترین قیمت‌ها برای موبایل، لپ‌تاپ، قطعات و لوازم جانبی</p>
+                    <div class="hero-actions">
+                        <a href="#products" class="btn btn-primary">مشاهده کالاها</a>
+                        <a href="contact.html" class="btn btn-secondary">تماس با ما</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image"><i class="fas fa-cube" style="font-size:120px;opacity:0.3;color:var(--primary);"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPECIAL OFFERS ===== -->
+    <section class="section special-offers" id="specialOffers">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">🎁 شگفت‌انگیزهای امروز</h2>
+                <span class="discount-timer">⏳ <span id="timerDisplay">--:--:--</span></span>
+            </div>
+            <div class="product-scroll"><div class="product-track" id="specialTrack"></div></div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCT SECTIONS ===== -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="product-section">
+                <div class="section-head"><h2 class="section-title">💻 لپ‌تاپ‌ها</h2><a href="products.html?category=laptop" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a></div>
+                <div class="product-scroll"><div class="product-track" id="laptopTrack"></div></div>
+            </div>
+            <div class="product-section">
+                <div class="section-head"><h2 class="section-title">📱 گوشی‌های موبایل</h2><a href="products.html?category=mobile" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a></div>
+                <div class="product-scroll"><div class="product-track" id="mobileTrack"></div></div>
+            </div>
+            <div class="product-section">
+                <div class="section-head"><h2 class="section-title">🖥️ کامپیوترها</h2><a href="products.html?category=computer" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a></div>
+                <div class="product-scroll"><div class="product-track" id="computerTrack"></div></div>
+            </div>
+            <div class="product-section">
+                <div class="section-head"><h2 class="section-title">🎧 لوازم جانبی</h2><a href="products.html?category=accessory" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a></div>
+                <div class="product-scroll"><div class="product-track" id="accessoryTrack"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-cube"></i> NoCenter</h3>
+                    <p>فروشگاه تخصصی دیجیتال با بهترین قیمت‌ها</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>دسترسی سریع</h4>
+                    <a href="index.html">صفحه اصلی</a>
+                    <a href="products.html">محصولات</a>
+                    <a href="contact.html">تماس با ما</a>
+                </div>
+                <div class="footer-col">
+                    <h4>تماس با ما</h4>
+                    <a href="tel:+989123456789"><i class="fas fa-phone"></i> ۰۹۱۲-۳۴۵-۶۷۸۹</a>
+                    <a href="mailto:info@nocenter.ir"><i class="fas fa-envelope"></i> info@nocenter.ir</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> تهران، خیابان ولیعصر</a>
+                </div>
+                <div class="footer-col">
+                    <h4>ساعات کاری</h4>
+                    <p>شنبه تا چهارشنبه: ۹ تا ۲۰</p>
+                    <p>پنجشنبه: ۹ تا ۱۷</p>
+                    <p>جمعه: تعطیل</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۱۴۰۵ NoCenter</p>
+                <p class="jalali-date" id="footerDate"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODALS ===== -->
+    <div class="modal-overlay hidden" id="authModal">
+        <div class="modal-box">
+            <div class="modal-header"><h3><i class="fas fa-user-circle"></i> ورود / ثبت‌نام</h3><button class="modal-close" id="authClose"><i class="fas fa-times"></i></button></div>
+            <div class="modal-body">
+                <input type="text" id="authEmail" placeholder="ایمیل یا شماره موبایل" />
+                <input type="password" id="authPass" placeholder="رمز عبور (حداقل ۴ کاراکتر)" />
+                <button class="btn btn-primary" id="authSubmit">ورود / ثبت‌نام</button>
+                <p class="auth-note">در صورت عدم وجود، حساب جدید ساخته می‌شود</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3>🛒 سبد خرید</h3><button id="closeCart"><i class="fas fa-times"></i></button></div>
+        <div class="cart-items" id="cartItems"><p class="empty-cart">سبد خرید خالی است</p></div>
+        <div class="cart-footer">
+            <div class="cart-total">جمع: <span id="cartTotal">۰</span> تومان</div>
+            <button class="btn btn-primary" id="checkoutBtn">تکمیل خرید</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Buy Modal -->
+    <div class="modal-overlay hidden" id="buyModal">
+        <div class="modal-box buy-modal">
+            <div class="modal-header"><h3>🛒 تکمیل خرید</h3><button class="modal-close" id="buyModalClose"><i class="fas fa-times"></i></button></div>
+            <div class="modal-body">
+                <div class="buy-contact">
+                    <h4>برای خرید و راهنمایی بیشتر با ما تماس بگیرید</h4>
+                    <div class="contact-info">
+                        <a href="tel:+989123456789"><i class="fas fa-phone"></i> ۰۹۱۲-۳۴۵-۶۷۸۹</a>
+                        <p><i class="fas fa-map-marker-alt"></i> تهران، خیابان ولیعصر، پلاک ۱۲۳</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i> تلگرام</a>
+                        <a href="#"><i class="fab fa-instagram"></i> اینستاگرام</a>
+                        <a href="#"><i class="fab fa-whatsapp"></i> واتساپ</a>
+                        <a href="#"><i class="fab fa-youtube"></i> یوتیوب</a>
+                    </div>
+                    <p class="buy-note">جهت خرید حضوری به آدرس فوق مراجعه فرمایید</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rating Modal -->
+    <div class="modal-overlay hidden" id="ratingModal">
+        <div class="modal-box">
+            <div class="modal-header"><h3>⭐ امتیاز دهید</h3><button class="modal-close" id="ratingClose"><i class="fas fa-times"></i></button></div>
+            <div class="modal-body">
+                <p style="text-align:center;margin-bottom:12px;">به این کالا امتیاز دهید</p>
+                <div class="stars" id="starContainer">
+                    <i class="far fa-star" data-value="1"></i>
+                    <i class="far fa-star" data-value="2"></i>
+                    <i class="far fa-star" data-value="3"></i>
+                    <i class="far fa-star" data-value="4"></i>
+                    <i class="far fa-star" data-value="5"></i>
+                </div>
+                <button class="btn btn-primary" id="ratingSubmit" style="width:100%;justify-content:center;">ثبت امتیاز</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle"><i class="fas fa-comment-dots"></i></button>
+        <div class="chat-box hidden" id="chatBox">
+            <div class="chat-header">
+                <h4>💬 پشتیبانی</h4>
+                <button id="chatClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <p class="chat-msg admin">سلام! چطور می‌توانم کمک کنم؟</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="پیام خود را بنویسید..." />
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/calendar.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
