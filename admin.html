@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>پنل مدیریت | فروشگاه دیجیتال میلاد</title>
+
+    <link rel="stylesheet" href="https://cdn.font-store.ir/behdad.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dark.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+    <header class="site-header" style="margin-bottom:20px;">
+        <div class="container header-inner">
+            <div class="brand">
+                <div class="brand-mark"><i class="fas fa-cog"></i></div>
+                <div>
+                    <strong>پنل مدیریت</strong>
+                    <small>مدیریت کالاها</small>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <a href="index.html" class="btn btn-secondary" style="padding:8px 16px;">
+                    <i class="fas fa-arrow-right"></i> بازگشت
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="admin-panel">
+                <h2><i class="fas fa-boxes"></i> مدیریت کالاها</h2>
+                <p style="color:var(--muted); margin-bottom:16px;">
+                    افزودن، ویرایش یا حذف کالاها. تخفیف به صورت درصد یا مبلغ ثابت با تاریخ شمسی.
+                </p>
+
+                <form class="admin-form" id="adminForm">
+                    <input type="hidden" id="editId" value="" />
+
+                    <div style="grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+                        <input type="text" id="productTitle" placeholder="عنوان کالا" required />
+                        <input type="text" id="productCategory" placeholder="دسته‌بندی (مثلاً موبایل)" required />
+                    </div>
+
+                    <input type="text" id="productTags" placeholder="تگ‌ها (با کاما جدا کنید)" />
+                    <input type="text" id="productPrice" placeholder="قیمت (تومان)" required />
+                    <input type="text" id="productImage" placeholder="آدرس تصویر (URL)" />
+
+                    <textarea id="productDesc" placeholder="توضیحات کوتاه" style="grid-column:1/-1;"></textarea>
+
+                    <div style="grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px;">
+                        <input type="text" id="discountType" placeholder="نوع: percent یا fixed" />
+                        <input type="text" id="discountValue" placeholder="مقدار تخفیف" />
+                        <input type="text" id="discountStart" placeholder="تاریخ شروع (مثلاً 1405/01/01)" />
+                        <input type="text" id="discountEnd" placeholder="تاریخ پایان (مثلاً 1405/12/29)" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="grid-column:1/-1; justify-content:center;">
+                        <i class="fas fa-save"></i> ذخیره کالا
+                    </button>
+                </form>
+
+                <div style="margin-top:24px;">
+                    <h3>لیست کالاها</h3>
+                    <div class="admin-list" id="adminList">
+                        <!-- injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© ۱۴۰۵ فروشگاه دیجیتال میلاد — پنل مدیریت</p>
+        </div>
+    </footer>
+
+    <script src="js/calendar.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/admin.js"></script>
+
+    <script>
+        // Theme toggle for admin page
+        document.getElementById('themeToggle')?.addEventListener('click', function() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            this.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            const toggle = document.getElementById('themeToggle');
+            if (toggle) {
+                toggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            }
+        }
+    </script>
+</body>
+</html>
