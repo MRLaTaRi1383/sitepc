@@ -1,0 +1,37 @@
+[data-theme="dark"] {
+    --bg: #0d1b2a;
+    --bg-2: #1b2b3f;
+    --text: #e6edf5;
+    --muted: #9aabbf;
+    --primary: #6ba9ff;
+    --primary-2: #3b8cff;
+    --glass: rgba(30, 45, 65, 0.7);
+    --glass-strong: rgba(40, 60, 85, 0.8);
+    --border: rgba(80, 120, 170, 0.4);
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    --shadow-soft: 0 12px 35px rgba(0, 0, 0, 0.3);
+    --nav-bg: rgba(20, 35, 55, 0.7);
+    --card-bg: rgba(30, 50, 75, 0.5);
+}
+
+[data-theme="dark"] .glass {
+    background: linear-gradient(145deg, rgba(40, 60, 85, 0.7), rgba(20, 35, 55, 0.5));
+}
+
+[data-theme="dark"] .phone-mockup {
+    background: #0a0e14;
+}
+
+[data-theme="dark"] .phone-screen {
+    background: linear-gradient(145deg, #1a3a5a, #4a3a7a 46%, #8a4a5a);
+}
+
+[data-theme="dark"] .brand-mark {
+    background: linear-gradient(135deg, #1a6fde, #3b8cff);
+}
+
+[data-theme="dark"] .gradient-text {
+    background: linear-gradient(135deg, #6ba9ff, #9b7aef);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
