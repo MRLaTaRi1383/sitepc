@@ -1,2 +1,0 @@
-# sitepc
-for site pc 
