@@ -1,0 +1,1076 @@
+/* ============================================================
+   CSS RESET & VARIABLES - GLASS DESIGN
+   ============================================================ */
+:root {
+    --bg: #f0f4f8;
+    --bg-2: #ffffff;
+    --text: #0a1628;
+    --text-secondary: #4a5a72;
+    --muted: #7a8a9e;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #60a5fa;
+    --secondary: #7c3aed;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --glass: rgba(255, 255, 255, 0.25);
+    --glass-hover: rgba(255, 255, 255, 0.35);
+    --glass-strong: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.12);
+    --radius-xl: 28px;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --container: 1240px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+    --bg: #0a1628;
+    --bg-2: #111f33;
+    --text: #e8edf5;
+    --text-secondary: #9aaec9;
+    --muted: #6a7f9a;
+    --glass: rgba(20, 35, 55, 0.3);
+    --glass-hover: rgba(30, 50, 80, 0.4);
+    --glass-strong: rgba(25, 45, 70, 0.6);
+    --glass-border: rgba(60, 90, 130, 0.2);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Behdad", Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background var(--transition), color var(--transition);
+    padding-bottom: 80px;
+    line-height: 1.6;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.06), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.06), transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.04), transparent 50%);
+    background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 999px;
+}
+
+.container {
+    width: min(calc(100% - 32px), var(--container));
+    margin-inline: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+input, textarea, select {
+    font-family: inherit;
+}
+
+/* ============================================================
+   GLASS EFFECT
+   ============================================================ */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+}
+
+.glass-strong {
+    background: var(--glass-strong);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-strong);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--glass-strong);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border-bottom: 1px solid var(--glass-border);
+    transition: background var(--transition), border var(--transition);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    flex-wrap: wrap;
+}
+
+/* Brand */
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+.brand-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    transition: transform var(--transition);
+}
+.brand-link:hover .brand-mark {
+    transform: rotate(-10deg) scale(1.05);
+}
+.brand strong {
+    font-size: 1.15rem;
+    color: var(--text);
+}
+.brand small {
+    font-size: 0.7rem;
+    color: var(--muted);
+    display: block;
+    margin-top: -2px;
+}
+
+/* ============================================================
+   MEGA MENU - GLASS
+   ============================================================ */
+.mega-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.mega-menu {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+}
+
+.mega-item {
+    position: relative;
+}
+
+.mega-item > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition);
+    font-size: 0.95rem;
+    position: relative;
+    background: transparent;
+}
+
+.mega-item > a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width var(--transition);
+}
+.mega-item > a:hover::after,
+.mega-item.active > a::after {
+    width: 60%;
+}
+
+.mega-item > a:hover,
+.mega-item.active > a {
+    color: var(--primary);
+    background: var(--glass-hover);
+}
+
+.mega-item > a i {
+    font-size: 1.1rem;
+}
+
+/* Mega Dropdown - Glass */
+.mega-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 560px;
+    padding: 24px 28px;
+    border-radius: var(--radius-lg);
+    background: var(--glass-strong);
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-strong);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.98);
+    transition: all 0.25s ease;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    z-index: 1001;
+}
+
+.mega-item:hover .mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.mega-col h4 {
+    color: var(--primary);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mega-col a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: all var(--transition);
+    border-radius: var(--radius-sm);
+}
+
+.mega-col a:hover {
+    color: var(--primary);
+    background: var(--glass-hover);
+    padding-right: 16px;
+}
+
+.mega-col a i {
+    width: 20px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* ============================================================
+   HEADER ACTIONS - GLASS
+   ============================================================ */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-toggle-mobile {
+    display: none;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    transition: all var(--transition);
+}
+
+.theme-toggle,
+.auth-toggle,
+.cart-toggle {
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    color: var(--text-secondary);
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(8px);
+}
+
+.theme-toggle:hover,
+.auth-toggle:hover,
+.cart-toggle:hover {
+    background: var(--glass-hover);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.cart-toggle {
+    position: relative;
+}
+#cartCount {
+    background: var(--danger);
+    color: white;
+    border-radius: 999px;
+    padding: 0 8px;
+    font-size: 0.7rem;
+    min-width: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+/* ============================================================
+   HERO - GLASS
+   ============================================================ */
+.hero {
+    padding: 40px 0 20px;
+}
+.hero-card {
+    border-radius: var(--radius-xl);
+    padding: clamp(32px, 5vw, 60px);
+    background: var(--glass-strong);
+    backdrop-filter: blur(28px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-strong);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+    backdrop-filter: blur(8px);
+}
+.hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin-bottom: 24px;
+}
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    display: grid;
+    place-items: center;
+}
+.hero-image {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--glass);
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--glass-border);
+}
+
+/* ============================================================
+   BUTTONS - GLASS
+   ============================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition);
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
+}
+
+.btn-secondary {
+    background: var(--glass);
+    color: var(--text);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
+}
+.btn-secondary:hover {
+    background: var(--glass-hover);
+    transform: translateY(-3px);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+.btn-danger:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.25);
+}
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+.section {
+    padding: 30px 0 10px;
+}
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.section-title {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+.view-all {
+    color: var(--primary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap var(--transition);
+}
+.view-all:hover {
+    gap: 12px;
+}
+
+/* ============================================================
+   CATEGORY SLIDER - GLASS
+   ============================================================ */
+.category-slider {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 8px 4px 16px;
+    scrollbar-width: none;
+}
+.category-slider::-webkit-scrollbar {
+    display: none;
+}
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: all var(--transition);
+    min-width: 90px;
+    flex-shrink: 0;
+    backdrop-filter: blur(8px);
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+.category-item i {
+    font-size: 28px;
+    transition: color var(--transition);
+}
+.category-item span {
+    font-size: 0.8rem;
+}
+.category-item:hover,
+.category-item.active {
+    background: var(--glass-hover);
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+.category-item.active i,
+.category-item.active span {
+    color: var(--primary);
+}
+
+/* ============================================================
+   PRODUCT SCROLL
+   ============================================================ */
+.product-scroll {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.product-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.5s ease;
+    padding: 8px 4px;
+}
+
+/* ============================================================
+   PRODUCT CARD - GLASS
+   ============================================================ */
+.product-card {
+    min-width: 220px;
+    max-width: 250px;
+    flex-shrink: 0;
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--primary);
+    background: var(--glass-hover);
+}
+
+.product-card .image {
+    aspect-ratio: 1/0.9;
+    border-radius: var(--radius-sm);
+    background: var(--glass);
+    display: grid;
+    place-items: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.product-card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product-card .badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: var(--glass-strong);
+    backdrop-filter: blur(8px);
+}
+.product-card .badge.discount {
+    background: var(--danger);
+    color: white;
+}
+.product-card .badge.special {
+    background: var(--warning);
+    color: #000;
+}
+.product-card .badge.sold {
+    background: var(--muted);
+    color: white;
+}
+.product-card .badge.available {
+    background: var(--success);
+    color: white;
+}
+
+.product-card .title {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.product-card .desc {
+    color: var(--muted);
+    font-size: 0.78rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 38px;
+}
+.product-card .stats {
+    display: flex;
+    gap: 12px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin: 6px 0;
+}
+.product-card .stats span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.product-card .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+.product-card .price {
+    font-weight: bold;
+    font-size: 1rem;
+}
+.product-card .price .old {
+    text-decoration: line-through;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: normal;
+    margin-left: 6px;
+}
+.product-card .add-btn {
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    background: var(--primary);
+    color: white;
+    transition: all var(--transition);
+}
+.product-card .add-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   SPECIAL OFFERS
+   ============================================================ */
+.special-offers {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-xl);
+    padding: 30px 0;
+    margin: 10px 0;
+    border: 1px solid var(--glass-border);
+}
+.discount-timer {
+    color: var(--danger);
+    font-weight: 600;
+}
+#timerDisplay {
+    background: var(--glass);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+/* ============================================================
+   PRODUCTS PAGE
+   ============================================================ */
+.products-page {
+    padding: 30px 0;
+}
+.products-header {
+    margin-bottom: 24px;
+}
+.products-header h1 {
+    margin-bottom: 16px;
+}
+.products-filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.products-filters select {
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    color: var(--text);
+    font-family: inherit;
+    backdrop-filter: blur(8px);
+    min-width: 140px;
+}
+.products-filters select:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* ============================================================
+   PRODUCT DETAIL
+   ============================================================ */
+.product-detail-page {
+    padding: 30px 0;
+}
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: var(--glass-strong);
+    backdrop-filter: blur(28px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+}
+.product-detail-image {
+    background: var(--glass);
+    border-radius: var(--radius-md);
+    display: grid;
+    place-items: center;
+    min-height: 300px;
+}
+.product-detail-image img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+}
+.product-detail-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+.product-detail-info .price {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+.product-detail-info .description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+.product-detail-info .meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+.product-detail-info .meta span {
+    background: var(--glass);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+.product-detail-info .actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   CART SIDEBAR - GLASS
+   ============================================================ */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    max-width: 90vw;
+    height: 100vh;
+    background: var(--glass-strong);
+    backdrop-filter: blur(32px);
+    border-left: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-strong);
+    transition: right 0.3s ease;
+    z-index: 2000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.cart-sidebar.open {
+    right: 0;
+}
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 1999;
+    display: none;
+}
+.cart-overlay.show {
+    display: block;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--glass-border);
+}
+.cart-header button {
+    font-size: 1.3rem;
+    color: var(--text);
+}
+.cart-items {
+    flex: 1;
+    padding: 12px 0;
+}
+.cart-items .empty-cart {
+    text-align: center;
+    color: var(--muted);
+    padding: 40px 0;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+.cart-item .item-remove {
+    color: var(--danger);
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.cart-footer {
+    padding-top: 12px;
+    border-top: 1px solid var(--glass-border);
+}
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.cart-footer .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ============================================================
+   MODAL - GLASS
+   ============================================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: grid;
+    place-items: center;
+    z-index: 3000;
+}
+.modal-overlay.hidden {
+    display: none !important;
+}
+.modal-box {
+    max-width: 600px;
+    width: 92%;
+    border-radius: var(--radius-lg);
+    background: var(--glass-strong);
+    backdrop-filter: blur(32px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-strong);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--glass-border);
+}
+.modal-header h3 {
+    font-size: 1.1rem;
+}
+.modal-close {
+    font-size: 1.3rem;
+    color: var(--muted);
+}
+.modal-body {
+    padding: 20px 24px;
+}
+.modal-body input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    color: var(--text);
+    margin-bottom: 12px;
+}
+.auth-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* ============================================================
+   BUY MODAL
+   ============================================================ */
+.buy-contact {
+    text-align: center;
+}
+.buy-contact h4 {
+    margin-bottom: 16px;
+}
+.contact-info {
+    margin: 16px 0;
+}
+.contact-info a,
+.contact-info p {
+    display: block;
+    padding: 8px 0;
+    color: var(--text);
+}
+.buy-modal .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+}
+.buy-modal .social-links a {
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    transition: all var(--transition);
+}
+.buy-modal .social-links a:hover {
+    background: var(--glass-hover);
+    transform: translateY(-2px);
+}
+.buy-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 12px;
+}
+
+/* ============================================================
+   FOOTER - GLASS
+   ============================================================ */
+.site-footer {
+    background: var(--glass-strong);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    padding: 40px 0 20px;
+    margin-top: 30px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 24px;
+}
+.footer-col h3,
+.footer-col h4 {
+    margin-bottom: 12px;
+    color: var(--text);
+}
+.footer-col p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+.footer-col a {
+    display: block;
+    color: var(--text-secondary);
+    padding: 4px 0;
+    font-size: 0.9rem;
+    transition: color var(--transition);
+}
+.footer-col a:hover {
+    color: var(--primary);
+}
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: var(--glass);
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+    transition: all var(--transition);
+    border: 1px solid var(--glass-border);
+}
+.social-links a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+.footer-bottom {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+.footer-bottom .jalali-date {
+    direction: ltr;
+}
